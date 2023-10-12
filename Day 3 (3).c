@@ -1,16 +1,20 @@
 #include <stdio.h>
 int main() {
-    int a;
-    long b;   // equivalent to long int b;
-    long long c;  // equivalent to long long int c;
-    double e;
-    long double f;
+    char c;
+    int lowercase_vowel, uppercase_vowel;
+    printf("Enter an alphabet: ");
+    scanf("%c", &c);
 
-    printf("Size of int = %zu bytes \n", sizeof(a));
-    printf("Size of long int = %zu bytes\n", sizeof(b));
-    printf("Size of long long int = %zu bytes\n", sizeof(c));
-    printf("Size of double = %zu bytes\n", sizeof(e));
-    printf("Size of long double = %zu bytes\n", sizeof(f));
-    
+    // evaluates to 1 if variable c is a lowercase vowel
+    lowercase_vowel = (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+
+    // evaluates to 1 if variable c is a uppercase vowel
+    uppercase_vowel = (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U');
+
+    // evaluates to 1 (true) if c is a vowel
+    if (lowercase_vowel || uppercase_vowel)
+        printf("%c is a vowel.", c);
+    else
+        printf("%c is a consonant.", c);
     return 0;
 }

@@ -1,22 +1,23 @@
-#include<stdio.h>
+#include <stdio.h>
+
 int main() {
-  double first, second, temp;
-  printf("Enter first number: ");
-  scanf("%lf", &first);
-  printf("Enter second number: ");
-  scanf("%lf", &second);
 
-  // value of first is assigned to temp
-  temp = first;
+  double n1, n2, n3;
 
-  // value of second is assigned to first
-  first = second;
+  printf("Enter three different numbers: ");
+  scanf("%lf %lf %lf", &n1, &n2, &n3);
 
-  // value of temp (initial value of first) is assigned to second
-  second = temp;
+  // if n1 is greater than both n2 and n3, n1 is the largest
+  if (n1 >= n2 && n1 >= n3)
+    printf("%.2f is the largest number.", n1);
 
-  // %.2lf displays number up to 2 decimal points
-  printf("\nAfter swapping, first number = %.2lf\n", first);
-  printf("After swapping, second number = %.2lf", second);
+  // if n2 is greater than both n1 and n3, n2 is the largest
+  if (n2 >= n1 && n2 >= n3)
+    printf("%.2f is the largest number.", n2);
+
+  // if n3 is greater than both n1 and n2, n3 is the largest
+  if (n3 >= n1 && n3 >= n2)
+    printf("%.2f is the largest number.", n3);
+
   return 0;
 }
